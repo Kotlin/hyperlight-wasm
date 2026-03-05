@@ -152,5 +152,12 @@ fn main() {
 fn get_config() -> Config {
     let mut config = Config::new();
     config.target("x86_64-unknown-none").unwrap();
+    unsafe {
+        config.x86_float_abi_ok(true);
+    }
+    // enable features
+    config.wasm_gc(true);
+    config.wasm_exceptions(true);
+    config.wasm_function_references(true);
     config
 }

@@ -102,6 +102,12 @@ pub extern "C" fn hyperlight_main() {
     platform::register_page_fault_handler();
 
     let mut config = Config::new();
+    unsafe {
+        config.x86_float_abi_ok(true);
+    }
+    config.wasm_gc(true);
+    config.wasm_exceptions(true);
+    config.wasm_function_references(true);
     config.with_custom_code_memory(Some(alloc::sync::Arc::new(platform::WasmtimeCodeMemory {})));
     let engine = Engine::new(&config).unwrap();
     let linker = Linker::new(&engine);
