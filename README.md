@@ -1,3 +1,6 @@
+# Kotlin fork of Hyperlight-Wasm
+This only exists to enable [the Kotlin/hyperlight-wasm-http-example](https://github.com/Kotlin/hyperlight-wasm-http-example), which runs a web server as a guest in hyperlight. There were a few very specific changes necessary to make Kotlin work in that scenario.
+
 # Hyperlight-Wasm - Run Wasm Modules in a Virtual Machine backed sandbox
 
 _Hyperlight-Wasm_ is a component that enables Wasm Modules to be run inside lightweight  Virtual Machine backed Sandbox. Its purpose is to enable applications to  safely run untrusted or third party Wasm code within a VM with very low latency/overhead. It is built on top of [Hyperlight](https://github.com/hyperlight-dev/hyperlight).
